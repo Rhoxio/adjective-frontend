@@ -1,2 +1,1 @@
-# adjective-frontend
-Main Javascript stuff for Adjective. 
+Main files for the Sdjective front-end stuff. 

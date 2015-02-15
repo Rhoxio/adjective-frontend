@@ -1,0 +1,22 @@
+<div ng-controller='CharacterController'>
+
+<input type="text" ng-model="find_id">
+<br>
+
+<h3> New Character </h3>
+
+<form novalidate class="simple-form">
+  Name: <input type="text" ng-model="char.name" /><br />
+  Class: <input type="text" ng-model="char.player_class" /><br />
+  <input type="submit" ng-click="createCharacter(char)" value="Save" />
+</form>
+
+
+	<button ng-click="getCharacter(find_id)">Get Character Info</button>
+	Response: {{response}}
+
+	<div ng-repeat='character in allCharacters'>
+	<h1>{{character.name}}</h1>
+	<h5>{{character.player_class}}</h5>
+	</div>
+</div>

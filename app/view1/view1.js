@@ -39,6 +39,18 @@ angular.module('myApp.view1', ['ngRoute'])
 		})
 	}
 
+	$scope.createUser = function(user){
+		$http.post('http://localhost:9393/users', user).
+			success(function(){
+				console.log(user)
+				console.log("Created User: " + user.name)
+			}).
+			error(function(err){
+				console.log(err)
+				console.log('API call failed')
+			})
+	}
+
 
 
 }]);

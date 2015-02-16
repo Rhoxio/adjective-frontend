@@ -11,9 +11,20 @@
   <input type="submit" ng-click="createCharacter(char)" value="Save" />
 </form>
 
-
-	<button ng-click="getCharacter(find_id)">Get Character Info</button>
+<button ng-click="getCharacter(find_id)">Get Character Info</button>
 	Response: {{response}}
+
+<h3> New User </h3>
+
+<form novalidate class="simple-form">
+  Name: <input type="text" ng-model="user.name" /><br />
+  Email: <input type="email" ng-model="user.email" /><br />
+  Password: <input type='password' ng-model="user.password"/>
+  <input type="submit" ng-click="createUser(user)" value="Save" />
+</form>
+
+
+
 
 	<div ng-repeat='character in allCharacters'>
 	<h1>{{character.name}}</h1>

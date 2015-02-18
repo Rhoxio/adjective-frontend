@@ -11,22 +11,21 @@ angular.module('myApp.view2', ['ngRoute'])
 
 .controller('BattleController', ['$scope', '$http', '$q', function($scope, $http, $q) {
 
-	var characters = []
-	var enemies = []
+	var entities = []
 
 	var getCharacterData = function(){
 		$http.get('http://localhost:9393/characters').then(function(response){
-			characters.push(response.data)
-			console.log(characters)
-			return response
+			entities[0] = response.data
+			$scope.allCharacters = response.data
+			return response.data
 		})
 	}
 
 	var getEnemyData = function(){
 		$http.get('http://localhost:9393/enemies').then(function(response){
-			enemies.push(response.data)
-			console.log(enemies)
-			return response
+			entities[1] = response.data
+			$scope.allEnemies = response.data
+			return response.data
 		})
 	}
 
@@ -34,9 +33,6 @@ angular.module('myApp.view2', ['ngRoute'])
 		getEnemyData();
 		getCharacterData();
 
-		$('.thing').on('click', function(){
-			$('.thing').css('background-color', 'red')
-		})
 	}
 
 	setUpBattleEnvironment()

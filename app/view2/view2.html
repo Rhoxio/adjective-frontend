@@ -7,9 +7,23 @@
 
 <h1> Battle Menu </h1>
 
-{{allCharacters[0].name}}
 <br>
-{{allEnemies[0].name}}
+
+<div class='enemyContainer'>
+	<div class='enemyDisplay' ng-repeat='enemy in allEnemies'>
+	{{enemy.name}}
+	{{enemy.current_hp}} / {{enemy.max_hp}}
+	</div>
+</div>
+
+<div class='charContainer'>
+	<div class="charDisplay" ng-repeat='character in allCharacters'>
+	{{character.name}}
+	{{character.current_hp}} / {{character.max_hp}}
+	</div>
+</div>
+
+<div class='animation'></div>
 
 
 

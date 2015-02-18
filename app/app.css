@@ -28,3 +28,16 @@
   content: "";
   padding: 0;
 }
+
+.animation{
+  position: absolute;
+  background-color: red;
+  width: 20%;
+  height: 5%;
+}
+
+.enemyContainer{
+  text-align: right;
+  float:right;
+  width: 50%;
+}

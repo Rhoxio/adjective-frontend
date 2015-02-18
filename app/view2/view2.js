@@ -29,11 +29,59 @@ angular.module('myApp.view2', ['ngRoute'])
 		})
 	}
 
-	var setUpBattleEnvironment = function(){
-		getEnemyData();
-		getCharacterData();
+	var menuAnimation = function(trigger, element){
+		
+		var toggle = 'closed'
+
+		$(trigger).on('click', function(){
+			if(toggle == 'closed'){
+				$(element).animate({
+					opacity: 0.25,
+					height: '50%'
+			}, 500)
+				toggle = 'open'
+			} else if(toggle == 'open') {
+				$(element).animate({
+					opacity: 0.25,
+					height: '5%'
+			}, 500)
+				toggle = 'closed'
+			}
+			
+		})	
+	}
+
+	var bindDefaultEvents = function(){
+
+		var toggle = 'closed'
+
+		$('.animation').on('click', function(){
+			if(toggle == 'closed'){
+				$('.animation').animate({
+					opacity: 0.25,
+					height: '50%'
+			}, 500)
+				toggle = 'open'
+			} else if(toggle == 'open') {
+				$('.animation').animate({
+					opacity: 0.25,
+					height: '5%'
+			}, 500)
+				toggle = 'closed'
+			}
+			
+		})	
+	
 
 	}
+
+	var setUpBattleEnvironment = function(){
+		getCharacterData();
+		getEnemyData();
+		bindDefaultEvents();
+	}
+
+
 
 	setUpBattleEnvironment()
 

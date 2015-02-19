@@ -16,7 +16,6 @@ angular.module('myApp.view2', ['ngRoute'])
 		$http.get('http://localhost:9393/characters').success(function(data, status){
 			$scope.characters = data
 			initializeCharacters();
-			$scope.switchTarget($scope.character1)
 		}).error(function(err){
 			console.log(err)
 		})	
@@ -26,7 +25,7 @@ angular.module('myApp.view2', ['ngRoute'])
 		// These are going to be designed to only pull in as many objects as they need to.
 		$http.get('http://localhost:9393/enemies').success(function(data, status){
 			$scope.enemies = data
-			initializeEnemies()
+			initializeEnemies();
 		}).error(function(err){
 			console.log(err)
 		})	

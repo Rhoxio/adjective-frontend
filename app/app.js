@@ -1,5 +1,7 @@
 'use strict';
 
+		this.characters = 1
+
 // Declare app level module which depends on views, and components
 angular.module('myApp', [
   'ngRoute',

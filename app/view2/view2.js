@@ -11,22 +11,25 @@ angular.module('myApp.view2', ['ngRoute'])
 
 .controller('BattleController', ['$scope', '$http', '$q', function($scope, $http, $q) {
 
-	var entities = []
-
 	var getCharacterData = function(){
-		$http.get('http://localhost:9393/characters').then(function(response){
-			entities[0] = response.data
-			$scope.allCharacters = response.data
-			return response.data
-		})
+		// These are going to be designed to only pull in as many objects as they need to. 
+		$http.get('http://localhost:9393/characters').success(function(data, status){
+			$scope.characters = data
+			initializeCharacters();
+			$scope.switchTarget($scope.character1)
+		}).error(function(err){
+			console.log(err)
+		})	
 	}
 
 	var getEnemyData = function(){
-		$http.get('http://localhost:9393/enemies').then(function(response){
-			entities[1] = response.data
-			$scope.allEnemies = response.data
-			return response.data
-		})
+		// These are going to be designed to only pull in as many objects as they need to.
+		$http.get('http://localhost:9393/enemies').success(function(data, status){
+			$scope.enemies = data
+			initializeEnemies()
+		}).error(function(err){
+			console.log(err)
+		})	
 	}
 
 	var menuAnimation = function(trigger, element){
@@ -52,38 +55,42 @@ angular.module('myApp.view2', ['ngRoute'])
 	}
 
 	var bindDefaultEvents = function(){
+		menuAnimation('.animation', '.animation');
+	}
 
-		var toggle = 'closed'
+	var initializeCharacters = function(){
+		$scope.character1 = $scope.characters[0]
+		$scope.character2 = $scope.characters[1]
+		$scope.character3 = $scope.characters[2]
+		$scope.character4 = $scope.characters[3]
+	}
 
-		$('.animation').on('click', function(){
-			if(toggle == 'closed'){
-				$('.animation').animate({
-					opacity: 0.25,
-					height: '50%'
-			}, 500)
-				toggle = 'open'
-			} else if(toggle == 'open') {
-				$('.animation').animate({
-					opacity: 0.25,
-					height: '5%'
-			}, 500)
-				toggle = 'closed'
-			}
-			
-		})	
-	
-
+	var initializeEnemies = function(){
+		$scope.enemy1 = $scope.enemies[0]
+		$scope.enemy2 = $scope.enemies[1]
+		$scope.enemy3 = $scope.enemies[2]
+		$scope.enemy4 = $scope.enemies[3]
 	}
 
 	var setUpBattleEnvironment = function(){
-		getCharacterData();
-		getEnemyData();
+		getCharacterData()
+		getEnemyData()
 		bindDefaultEvents();
 	}
 
+	$scope.switchTarget = function(newTarget){
+		console.log(newTarget)
+		$scope.currentTarget = newTarget
+	}
+
+	$scope.hurtSomething = function(entity){
+		entity.current_hp -= 5
+	}
 
 
-	setUpBattleEnvironment()
+setUpBattleEnvironment()
+
+}])
 
 
-}]);
+

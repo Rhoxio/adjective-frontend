@@ -17,13 +17,15 @@
 </div>
 
 <div class='charContainer'>
-	<div class="charDisplay" ng-repeat='character in allCharacters'>
-	{{character.name}}
-	{{character.current_hp}} / {{character.max_hp}}
-	</div>
+	<div class="charHP">{{currentTarget.current_hp}}</div>
 </div>
 
-<div class='animation'></div>
+<!-- <div class='animation'></div> -->
+{{currentTarget}}
+
+<button ng-click='hurtSomething(currentTarget)'>Hurt him!</button>
+
+<button ng-click='switchTarget(character2)'>Switch!</button>
 
 
 

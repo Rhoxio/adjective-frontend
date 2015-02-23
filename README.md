@@ -2,6 +2,15 @@
 
 > **Note**: This is not a complete product until release 1.0.0 at the earliest. I am still in the drafting phases of work, and will update it as regularly as humanly possible. 
 
+
+### Current Goals/User Stories
+  As a user, I want to be able to...
+    [X] 1. Create characters, enemies, locations, events, and bosses.
+    []  2. Set up parties
+    []  3. Conveniently write dialogue.
+    []  4. Use a UI that is clean and concise. 
+    [X] 5. Be able to set up a server easily.
+
 ### Purpose of this Project
 
 Adjective is a game engine started by myself to help alleviate some of the monotony you have to deal with when making an RPG from scratch. Much of the system makes it simple for anyone, even relative beginners, to get a simple game going as quickly as possible. Instead of focusing on graphics and more 'showy' aspects of game development, this package is intended to be used to set up your backend API and/or server. 

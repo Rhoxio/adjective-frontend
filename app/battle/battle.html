@@ -1,9 +1,4 @@
-
-
 <div ng-controller='BattleController'>
-<!-- 
-<input type="text" ng-model="find_id">
-<br> -->
 
 <h1> Battle Menu </h1>
 
@@ -24,11 +19,9 @@
 {{currentTarget.name}}
 
 <button ng-click='hurtSomething(currentTarget)'>Hurt him!</button>
-<button ng-click='switchTarget(character2)'>Character Two</button>
-<button ng-click='switchTarget(character3)'>Character Three</button>
-<button ng-click='switchTarget(character4)'>Character Four</button>
-
-
-
-
+<div class='character2' ng-click='switchTarget(character2)'>Character Two</div>
+<div class='character3' ng-click='switchTarget(character3)'>Character Three</div>
+<div class='character4' ng-click='switchTarget(character4)'>Character Four</div>
 </div>
+
+<link rel="stylesheet" href="battle/battle.css">

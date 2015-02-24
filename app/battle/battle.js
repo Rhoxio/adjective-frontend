@@ -11,14 +11,14 @@ angular.module('myApp.battle', ['ngRoute'])
 
 .controller('BattleController', ['$scope', '$http', '$q', function($scope, $http, $q) {
 
-	var getCharacterData = function(){
-		// These are going to be designed to only pull in as many objects as they need to. 
-		$http.get('http://localhost:9393/characters').success(function(data, status){
+	var getCharacterData = function(usersCharacters){
+		// These are going to be designed to only pull in as many objects as they need to.
+		$http.get('http://localhost:9393/characters/'+usersCharacters).success(function(data, status){
 			$scope.characters = data
 			initializeCharacters();
 		}).error(function(err){
 			console.log(err)
-		})	
+		})
 	}
 
 	var getEnemyData = function(){
@@ -71,8 +71,12 @@ angular.module('myApp.battle', ['ngRoute'])
 		$scope.enemy4 = $scope.enemies[3]
 	}
 
+	var initializeCharacterPortraits = function(){
+
+	}
+
 	var setUpBattleEnvironment = function(){
-		getCharacterData()
+		getCharacterData('1,2,3,4')
 		getEnemyData()
 		bindDefaultEvents();
 	}

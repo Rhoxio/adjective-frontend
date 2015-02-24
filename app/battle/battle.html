@@ -11,17 +11,32 @@
 	</div>
 </div>
 
-<div class='charContainer'>
-	<div class="charHP">{{currentTarget.current_hp}}</div>
-</div>
+<div class="charHP">{{currentTarget.current_hp}}</div>
 
 <!-- <div class='animation'></div> -->
 {{currentTarget.name}}
 
 <button ng-click='hurtSomething(currentTarget)'>Hurt him!</button>
-<div class='character2' ng-click='switchTarget(character2)'>Character Two</div>
-<div class='character3' ng-click='switchTarget(character3)'>Character Three</div>
-<div class='character4' ng-click='switchTarget(character4)'>Character Four</div>
+
+	<div class='characterContainer'>
+		<div class='character2' ng-click='switchTarget(character2)'>Character Two</div>
+		<div class='character3' ng-click='switchTarget(character3)'>Character Three</div>
+		<div class='character4' ng-click='switchTarget(character4)'>Character Four</div>
+	</div>
+
+	<div class='enemyContainer'>
+		<div class='enemy2' ng-click='switchTarget(enemy2)'>Enemy Two</div>
+		<div class='enemy3' ng-click='switchTarget(enemy3)'>Enemy Three</div>
+		<div class='enemy4' ng-click='switchTarget(enemy4)'>Enemy Four</div>
+	</div>
+
+	<div class='action-box'>
+		<button class='attack'>Attack</button>
+		<button class='abilities'>Abilities</button>
+		<button class='items'>Items</button>
+		<button class='run'>Run</button>
+	</div>
+
 </div>
 
 <link rel="stylesheet" href="battle/battle.css">

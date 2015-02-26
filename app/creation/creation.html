@@ -8,20 +8,27 @@
 <form novalidate class="simple-form">
   Name: <input type="text" ng-model="char.name" /><br />
   Class: <input type="text" ng-model="char.player_class" /><br />
+  Gender: <input type="text" ng-model="char.gender" /><br />
+  Skill: <input type="text" ng-model="char.skill" /><br />
+  Max HP: <input type="text" ng-model="char.max_hp" /><br />
+  Attack Rating: <input type="text" ng-model="char.attack_rating" /><br />
+  Initiative (Speed): <input type="text" ng-model="char.initiative" /><br />
+  Defense: <input type="text" ng-model="char.defense" /><br />
   <input type="submit" ng-click="createCharacter(char)" value="Save" />
 </form>
 
 <button ng-click="getCharacter(find_id)">Get Character Info</button>
 	Response: {{response}}
 
-<h3> New User </h3>
+<!-- <h3> New User </h3> -->
 
-<form novalidate class="simple-form">
+<!-- BCrtpy is not working for this yet. I am just going to explude it for the moment. -->
+<!-- <form novalidate class="simple-form">
   Name: <input type="text" ng-model="user.name" /><br />
   Email: <input type="email" ng-model="user.email" /><br />
   Password: <input type='password' ng-model="user.password"/>
   <input type="submit" ng-click="createUser(user)" value="Save" />
-</form>
+</form> -->
 
 
 
